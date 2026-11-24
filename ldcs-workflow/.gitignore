@@ -1,0 +1,25 @@
+# 忽略密钥与运行时产物
+.env
+.env.local
+*.key
+*.pem
+.mcp_sessions.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# 部署/构建产物
+*.log
+dist/
+build/
+node_modules/
