@@ -87,16 +87,16 @@ LABELS = {
 SKIP_PREFIX = ("attempt_",)
 SKIP_SUFFIX = ("_progress", "_in_context")
 
+# 阶段码 → 中文。取值必须与 flow_default.DEFAULT_STAGE_AFTER 一一对应，
+# 漏一个就会把英文码原样吐给用户（`await_retire` 曾因漏配直接露出来过）。
 STAGE_CN = {
-    "ask_huji": "正在追问参保地 / 户籍",
-    "await_huji": "等待参保地 / 户籍信息",
-    "ask_gender_age": "正在追问性别与年龄",
-    "await_gender_age": "等待性别与年龄信息",
-    "ask_retire": "正在追问退休测算所需信息",
-    "ask_unemp": "正在追问失业保险金所需信息",
+    "idle": "尚未开始（未识别到业务意图）",
+    "await_huji": "等待回答：参保地 / 户籍",
+    "await_gender_age": "等待回答：性别与年龄",
+    "await_retire": "等待回答：出生年月 / 人员类别",
+    "await_unemp": "等待回答：缴费月数 / 离职情形",
     "done": "当前支线已出结论",
 }
-
 GENDER_CN = {"male": "男", "female": "女", "男": "男", "女": "女"}
 
 # 摘要里把内部码换成中文，避免模型把 "guangdong" 当成人话复述出去
